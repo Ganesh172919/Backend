@@ -8,7 +8,7 @@ CREATE TYPE "ChatMode" AS ENUM ('NORMAL', 'LIGHT', 'DARK');
 CREATE TYPE "UserChatStatus" AS ENUM ('MUTED', 'ARCHIVED', 'ACTIVE');
 
 -- CreateEnum
-CREATE TYPE "MessageType" AS ENUM ('TEXT', 'ATTACHMENT', 'VOICENOTE', 'PDF');
+CREATE TYPE "MessageType" AS ENUM ('TEXT', 'VOICENOTE', 'PDF');
 
 -- CreateEnum
 CREATE TYPE "MessageStatus" AS ENUM ('READ', 'UNREAD', 'DELIVERED');
@@ -66,7 +66,6 @@ CREATE TABLE "Message" (
     "text" TEXT,
     "type" "MessageType" NOT NULL DEFAULT 'TEXT',
     "blob_location" TEXT,
-    "file_type" TEXT,
     "expiresAt" TIMESTAMP(3),
     "scheduledAt" TIMESTAMP(3),
     "deletedAt" TIMESTAMP(3),
